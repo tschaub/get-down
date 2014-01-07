@@ -2,6 +2,19 @@
   "name": "get-down",
   "version": "0.1.0",
   "description": "Download and optionally extract files",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tschaub/get-down.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tschaub/get-down/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://tschaub.mit-license.org/"
+    }
+  ],
   "main": "lib/index.js",
   "scripts": {
     "test": "grunt --stack test",

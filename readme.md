@@ -1,8 +1,8 @@
 # `get-down`
 
-Download and optionally extract files.
+**Download and optionally extract files.**
 
-This draws heavily from [Bower's](http://bower.io/) download and extract utilities.  Those utilities are copyright Twitter and carry the MIT license.
+This draws heavily from [Bower's](http://bower.io/) download and extract utilities.  Those utilities are [copyright Twitter](https://github.com/bower/bower/blob/master/LICENSE) and carry the MIT license.
 
 ## Example use
 
@@ -33,7 +33,7 @@ download('http://example.com/file.zip', {dest: 'some/directory', extract: true})
 // the dest directory must already exist
 ```
 
-As you might expect, `download` is all async.  You get an event listener in return:
+As you might expect, `download` is all async.  You get an event emitter in return:
 ```js
 var download = require('get-down');
 download('http://example.com/file.txt').on('end', function(dest) {
@@ -47,13 +47,13 @@ download('http://example.com/file.txt').on('end', function(dest) {
 
 Available options:
 
- * `dest` - `string` The destination for saving downloaded resources.
- * `extract` - `boolean` Extract the downloaded archive.
+ * **dest** - `string` The destination for saving downloaded resources.
+ * **extract** - `boolean` Extract the downloaded archive.
 
-The `download` method returns an event emitter with the following events:
+The `download` method returns an [event emitter](http://nodejs.org/api/events.html#events_class_events_eventemitter) with the following events:
 
- * `progress` - Emitted periodically during the download.
- * `error` - Emitted on any error.
- * `end` - Emitted when the download is complete.
+ * **progress** - Emitted periodically during the download.
+ * **error** - Emitted on any error.
+ * **end** - Emitted when the download is complete.
 
 [![Current Status](https://secure.travis-ci.org/tschaub/get-down.png?branch=master)](https://travis-ci.org/tschaub/get-down)

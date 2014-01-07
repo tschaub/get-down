@@ -74,16 +74,39 @@ describe('download()', function() {
         });
   });
 
-  it('downloads a zip file with extract false', function(done) {
+  it('downloads and extracts a zip file', function(done) {
     var scope = mockHttp('http://example.com')
         .get('/success.zip')
         .replyWithFile(200, 'fixtures/success.zip');
 
-    var options = {dest: 'dest', extract: false};
+    // success.zip contains a single success.txt file containing 'success\n'
+    var options = {dest: 'dest', extract: true};
     download('http://example.com/success.zip', options)
         .on('error', done)
         .on('end', function(dest) {
-          assert.equal(path.resolve(dest), path.resolve('dest/success.zip'));
+          assert.equal(path.resolve(dest), path.resolve('dest'));
+          assert.isTrue(fs.existsSync('dest/success.txt'));
+          assert.equal(
+              fs.readFileSync('dest/success.txt').toString(), 'success\n');
+          done();
+        });
+  });
+
+  it('extracts a zip file based on content-type', function(done) {
+    var scope = mockHttp('http://example.com')
+        .get('/zipfiles/success')
+        .replyWithFile(
+            200, 'fixtures/success.zip', {'content-type': 'application/zip'});
+
+    // success.zip contains a single success.txt file containing 'success\n'
+    var options = {dest: 'dest', extract: true};
+    download('http://example.com/zipfiles/success', options)
+        .on('error', done)
+        .on('end', function(dest) {
+          assert.equal(path.resolve(dest), path.resolve('dest'));
+          assert.isTrue(fs.existsSync('dest/success.txt'));
+          assert.equal(
+              fs.readFileSync('dest/success.txt').toString(), 'success\n');
           done();
         });
   });

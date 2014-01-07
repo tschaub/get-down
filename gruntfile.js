@@ -24,9 +24,6 @@ module.exports = function(grunt) {
       gruntfile: {
         src: gruntfileSrc
       },
-      index: {
-        src: 'index.js'
-      },
       tests: {
         src: testSrc
       },
@@ -45,7 +42,7 @@ module.exports = function(grunt) {
         tasks: ['cafemocha']
       },
       allJs: {
-        files: [gruntfileSrc, 'index.js', testSrc, libSrc],
+        files: [gruntfileSrc, testSrc, libSrc],
         tasks: ['newer:jshint']
       }
     }

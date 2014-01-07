@@ -2,7 +2,7 @@
   "name": "get-down",
   "version": "0.1.0",
   "description": "Download and optionally extract files",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "grunt --stack test",
     "debug-test": "node --debug-brk ./node_modules/.bin/grunt cafemocha",

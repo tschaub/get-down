@@ -1,0 +1,33 @@
+{
+  "name": "get-down",
+  "version": "0.0.0",
+  "description": "Download and optionally extract files",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt --stack test",
+    "debug-test": "node --debug-brk ./node_modules/.bin/grunt cafemocha",
+    "start": "grunt --stack start"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-cli": "~0.1.11",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-cafe-mocha": "~0.1.10",
+    "grunt": "~0.4.2",
+    "chai": "~1.8.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-newer": "~0.6.0",
+    "mock-fs": "~1.1.0"
+  },
+  "dependencies": {
+    "q": "1.0.0",
+    "graceful-fs": "2.0.1",
+    "junk": "0.2.2",
+    "zlib": "1.0.5",
+    "tar": "0.1.19",
+    "mout": "0.8.0",
+    "decompress-zip": "0.0.3",
+    "tmp": "0.0.23",
+    "request": "2.30.0"
+  }
+}

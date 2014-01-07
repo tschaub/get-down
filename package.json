@@ -18,7 +18,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "grunt --stack test",
-    "debug-test": "node --debug-brk ./node_modules/.bin/grunt cafemocha",
+    "debug-test": "node --stack-trace-limit=50 --debug-brk ./node_modules/.bin/grunt cafemocha",
     "start": "grunt --stack start"
   },
   "license": "MIT",

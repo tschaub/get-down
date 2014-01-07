@@ -97,4 +97,54 @@ describe('misc', function() {
 
   });
 
+  describe('resolveFilePath()', function() {
+
+    var restore;
+    beforeEach(function() {
+      restore = mock({
+        'existing-dir/existing-file': 'file content'
+      });
+    });
+    afterEach(function() {
+      restore();
+    });
+
+    it('resolves to an existing parent dir plus file', function(done) {
+      misc.resolveFilePath('existing-dir/new-file')
+          .then(function(file) {
+            assert.equal(file, 'existing-dir/new-file');
+            done();
+          }, done);
+    });
+
+    it('resolves to an existing dir plus basename', function(done) {
+      misc.resolveFilePath('existing-dir', 'new-file')
+          .then(function(file) {
+            assert.equal(file, 'existing-dir/new-file');
+            done();
+          }, done);
+    });
+
+    it('rejects an existing file', function(done) {
+      misc.resolveFilePath('existing-dir/existing-file')
+          .then(function(file) {
+            done(new Error('Expected failure'));
+          }, function(err) {
+            assert.instanceOf(err, Error);
+            done();
+          });
+    });
+
+    it('rejects a non-existent parent dir', function(done) {
+      misc.resolveFilePath('bogus-dir/some-file')
+          .then(function(file) {
+            done(new Error('Expected failure'));
+          }, function(err) {
+            assert.instanceOf(err, Error);
+            done();
+          });
+    });
+
+  });
+
 });

@@ -74,4 +74,18 @@ describe('download()', function() {
         });
   });
 
+  it('downloads a zip file with extract false', function(done) {
+    var scope = mockHttp('http://example.com')
+        .get('/success.zip')
+        .replyWithFile(200, 'fixtures/success.zip');
+
+    var options = {dest: 'dest', extract: false};
+    download('http://example.com/success.zip', options)
+        .on('error', done)
+        .on('end', function(dest) {
+          assert.equal(path.resolve(dest), path.resolve('dest/success.zip'));
+          done();
+        });
+  });
+
 });

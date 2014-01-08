@@ -12,9 +12,9 @@ describe('misc', function() {
     var restore;
     beforeEach(function() {
       restore = mock({
-        'dir': {
-          'source1': 'one content',
-          'source2': 'two content'
+        dir: {
+          source1: 'one content',
+          source2: 'two content'
         }
       });
     });

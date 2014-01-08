@@ -43,7 +43,7 @@ download('http://example.com/file.txt').on('end', function(dest) {
 
 ## API Docs
 
-### `download(url[, options])`
+### `download(url, [options])`
 
 Available options:
 
@@ -54,6 +54,6 @@ The `download` method returns an [event emitter](http://nodejs.org/api/events.ht
 
  * **progress** - Emitted periodically during the download.
  * **error** - Emitted on any error.
- * **end** - Emitted when the download is complete.
+ * **end** - Emitted when the download is complete.  Listeners will be called with the path to the downloaded file (or directory in the case of an extracted archive).
 
 [![Current Status](https://secure.travis-ci.org/tschaub/get-down.png?branch=master)](https://travis-ci.org/tschaub/get-down)

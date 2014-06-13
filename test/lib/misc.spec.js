@@ -9,9 +9,8 @@ describe('misc', function() {
 
   describe('copy()', function() {
 
-    var restore;
     beforeEach(function() {
-      restore = mock({
+      mock({
         dir: {
           source1: 'one content',
           source2: 'two content'
@@ -19,7 +18,7 @@ describe('misc', function() {
       });
     });
     afterEach(function() {
-      restore();
+      mock.restore();
     });
 
 
@@ -56,15 +55,14 @@ describe('misc', function() {
 
   describe('existingDirectory()', function() {
 
-    var restore;
     beforeEach(function() {
-      restore = mock({
+      mock({
         'existing/dir': {},
         'some-file': 'file content'
       });
     });
     afterEach(function() {
-      restore();
+      mock.restore();
     });
 
     it('resolves to path if directory exists', function(done) {
@@ -99,14 +97,13 @@ describe('misc', function() {
 
   describe('resolveFilePath()', function() {
 
-    var restore;
     beforeEach(function() {
-      restore = mock({
+      mock({
         'existing-dir/existing-file': 'file content'
       });
     });
     afterEach(function() {
-      restore();
+      mock.restore();
     });
 
     it('resolves to an existing parent dir plus file', function(done) {

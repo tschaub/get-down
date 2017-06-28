@@ -119,4 +119,4 @@ npm test
 
 You can run `npm start` to have the linter and tests run continuously during development.
 
-[![Current Status](https://secure.travis-ci.org/tschaub/get-down.png?branch=master)](https://travis-ci.org/tschaub/get-down)
+[![Build Status](https://travis-ci.org/tschaub/get-down.svg?branch=master)](https://travis-ci.org/tschaub/get-down)

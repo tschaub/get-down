@@ -21,7 +21,7 @@
     "eslint-config-tschaub": "^7.0.0",
     "mocha": "^3.4.2",
     "mock-fs": "~4.4.1",
-    "nock": "9.0.13",
+    "nock": "9.0.14",
     "rimraf": "^2.6.1"
   },
   "dependencies": {
@@ -34,7 +34,7 @@
     "request-progress": "3.0.0",
     "retry": "0.10.1",
     "tar": "3.2.0",
-    "tmp": "0.0.31"
+    "tmp": "0.0.33"
   },
   "eslintConfig": {
     "extends": "tschaub"

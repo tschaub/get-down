@@ -19,7 +19,7 @@
     "chai": "~4.1.1",
     "eslint": "^4.1.1",
     "eslint-config-tschaub": "^7.0.0",
-    "mocha": "^3.4.2",
+    "mocha": "^5.0.5",
     "mock-fs": "~4.4.1",
     "nock": "9.0.14",
     "rimraf": "^2.6.1"

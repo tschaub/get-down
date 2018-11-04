@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "decompress-zip": "0.3.0",
-    "graceful-fs": "4.1.11",
+    "graceful-fs": "4.1.15",
     "junk": "2.1.0",
     "mout": "1.0.0",
     "q": "1.5.0",

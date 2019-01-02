@@ -22,7 +22,7 @@
     "mocha": "^3.4.2",
     "mock-fs": "~4.4.1",
     "nock": "9.4.3",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.3"
   },
   "dependencies": {
     "decompress-zip": "0.3.0",

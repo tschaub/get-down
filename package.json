@@ -17,7 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "~4.1.1",
-    "eslint": "^4.1.1",
+    "eslint": "^5.15.0",
     "eslint-config-tschaub": "^7.0.0",
     "mocha": "^3.4.2",
     "mock-fs": "~4.4.1",

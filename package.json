@@ -28,7 +28,7 @@
     "decompress-zip": "0.3.0",
     "graceful-fs": "4.1.11",
     "junk": "2.1.0",
-    "mout": "1.0.0",
+    "mout": "1.2.2",
     "q": "1.5.0",
     "request": "2.81.0",
     "request-progress": "3.0.0",
